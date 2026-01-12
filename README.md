@@ -1,59 +1,62 @@
-# ArchBlog
+# Architectural World 🏛️✨
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.5.
+**Architectural World** is a modern, futuristic blog application built with **Angular v21**. It explores global architectural styles through a visually stunning **Glassmorphism & Neon** design system.
 
-## Development server
+![Home Page](docs/images/home.png)
 
-To start a local development server, run:
+## 🚀 Features
 
-```bash
-ng serve
-```
+*   **Futuristic Design System:** A custom-built dark theme featuring glassmorphism cards, neon gradients (Cyan/Purple), and animated backgrounds.
+*   **Global Architecture Content:** Detailed blog posts covering Chinese, Indian, European, Japanese, Islamic, African, and Future architecture.
+*   **Responsive UI:** Fully responsive layout using **Bootstrap 5** grid and custom CSS utilities.
+*   **Dynamic Filtering:** Filter architecture posts by region and search by keywords instantly.
+*   **High-Quality Assets:** Curated, high-resolution architectural photography from Unsplash.
+*   **Modern Typography:** Uses the 'Raleway' font family for a clean, elegant look.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🛠️ Tech Stack
 
-## Code scaffolding
+*   **Framework:** [Angular v21](https://angular.dev/) (Standalone Components, Signals)
+*   **Styling:** CSS3 (Custom Variables, Animations), Bootstrap 5 (Grid/Utilities)
+*   **Icons:** [Bootstrap Icons](https://icons.getbootstrap.com/) & Custom SVGs
+*   **Build Tool:** Angular CLI
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 📸 Screenshots
 
-```bash
-ng generate component component-name
-```
+| Blog List | Blog Detail |
+| :---: | :---: |
+| ![Blog List](docs/images/blog-list.png) | ![Blog Detail](docs/images/blog-detail.png) |
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 📦 Installation & Setup
 
-```bash
-ng generate --help
-```
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/Ajit-singh-991/arch_blog.git
+    cd arch_blog
+    ```
 
-## Building
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-To build the project run:
+3.  **Start the development server:**
+    ```bash
+    ng serve
+    ```
 
-```bash
-ng build
-```
+4.  **Open in Browser:**
+    Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 🤝 Contributing
 
-## Running unit tests
+Contributions are welcome! Please check out the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines.
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+1.  Fork the Project
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the Branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
 
-```bash
-ng test
-```
+## 📄 License
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Distributed under the MIT License. See `LICENSE` for more information.
