@@ -1,0 +1,60 @@
+<footer class="footer futuristic-footer">
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <h3 class="fw-bold mb-4 gradient-text-animated">Architectural World</h3>
+        <p class="text-muted">
+          Exploring the beauty and diversity of architectural designs from around the globe. 
+          From ancient traditions to modern innovations, discover the stories behind the world's most remarkable structures.
+        </p>
+      </div>
+      
+      <div class="col-lg-2 col-md-6">
+        <h5 class="fw-bold mb-4">Explore</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a routerLink="/blog" [queryParams]="{region: 'Chinese'}" class="text-muted text-decoration-none">Chinese</a></li>
+          <li class="mb-2"><a routerLink="/blog" [queryParams]="{region: 'Indian'}" class="text-muted text-decoration-none">Indian</a></li>
+          <li class="mb-2"><a routerLink="/blog" [queryParams]="{region: 'European'}" class="text-muted text-decoration-none">European</a></li>
+          <li class="mb-2"><a routerLink="/blog" [queryParams]="{region: 'Japanese'}" class="text-muted text-decoration-none">Japanese</a></li>
+          <li class="mb-2"><a routerLink="/blog" [queryParams]="{region: 'Future'}" class="text-muted text-decoration-none">Future</a></li>
+        </ul>
+      </div>
+      
+      <div class="col-lg-2 col-md-6">
+        <h5 class="fw-bold mb-4">About</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a routerLink="/" class="text-muted text-decoration-none">Home</a></li>
+          <li class="mb-2"><a routerLink="/blog" class="text-muted text-decoration-none">All Posts</a></li>
+        </ul>
+      </div>
+      
+      <div class="col-lg-4 col-md-6">
+        <h5 class="fw-bold mb-4">Stay Connected</h5>
+        <p class="text-muted mb-3">Follow us for the latest architectural insights</p>
+        <div class="social-links d-flex gap-3">
+          <a href="#" class="btn btn-outline-light btn-sm futuristic-btn-outline">
+            <i class="bi bi-twitter"></i>
+          </a>
+          <a href="#" class="btn btn-outline-light btn-sm futuristic-btn-outline">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="#" class="btn btn-outline-light btn-sm futuristic-btn-outline">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="#" class="btn btn-outline-light btn-sm futuristic-btn-outline">
+            <i class="bi bi-linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <hr class="my-4" style="border-color: rgba(255, 255, 255, 0.1);">
+    
+    <div class="row">
+      <div class="col-12 text-center">
+        <p class="text-muted mb-2">&copy; {{ currentYear }} Architectural World. All rights reserved.</p>
+        <p class="text-muted small">Celebrating the art and science of architecture</p>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,137 @@
+<div class="blog-detail-container" *ngIf="post">
+  <div class="container py-5">
+    <!-- Back Button -->
+    <div class="row mb-4">
+      <div class="col-12">
+        <button class="btn btn-outline-primary futuristic-btn-outline" (click)="goBack()">
+          <i class="bi bi-arrow-left me-2"></i>Back to Articles
+        </button>
+      </div>
+    </div>
+
+    <!-- Article Header -->
+    <div class="row mb-5">
+      <div class="col-lg-8 mx-auto">
+        <div class="article-header futuristic-card p-4 mb-4">
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <span class="badge bg-primary">{{ post.region }}</span>
+            <span class="badge bg-secondary">{{ post.country }}</span>
+            <span class="badge bg-light text-dark">
+              <i class="bi bi-calendar me-1"></i>{{ post.date | date:'MMM d, y' }}
+            </span>
+            <span class="badge bg-light text-dark">
+              <i class="bi bi-person me-1"></i>{{ post.author }}
+            </span>
+          </div>
+          <h1 class="display-4 fw-bold mb-4">{{ post.title }}</h1>
+          <p class="lead text-muted">{{ post.excerpt }}</p>
+          <div class="d-flex flex-wrap gap-2 mt-3">
+            <span class="badge bg-light text-dark" *ngFor="let tag of post.tags">{{ tag }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured Image -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <div class="article-featured-image futuristic-card overflow-hidden">
+          <img [src]="post.featuredImage" [alt]="post.title" class="w-100" style="max-height: 600px; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="row">
+      <div class="col-lg-8">
+        <article class="article-content futuristic-card p-5 mb-4">
+          <div class="article-body" [innerHTML]="post.content"></div>
+        </article>
+
+        <!-- Gallery -->
+        <div class="article-gallery futuristic-card p-4 mb-4" *ngIf="post.images.length > 1">
+          <h3 class="fw-bold mb-4">Gallery</h3>
+          <div class="row g-3">
+            <div class="col-md-6" *ngFor="let image of post.images">
+              <div class="gallery-item overflow-hidden rounded">
+                <img [src]="image" [alt]="post.title" class="w-100" style="height: 250px; object-fit: cover;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="col-lg-4">
+        <!-- Quick Info -->
+        <div class="futuristic-card p-4 mb-4">
+          <h5 class="fw-bold mb-4">Quick Info</h5>
+          <div class="mb-3">
+            <small class="text-muted d-block mb-1">Architectural Style</small>
+            <strong>{{ post.architecturalStyle }}</strong>
+          </div>
+          <div class="mb-3">
+            <small class="text-muted d-block mb-1">Country</small>
+            <strong>{{ post.country }}</strong>
+          </div>
+        </div>
+
+        <!-- Key Features -->
+        <div class="futuristic-card p-4 mb-4">
+          <h5 class="fw-bold mb-4">Key Features</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2" *ngFor="let feature of post.keyFeatures">
+              <i class="bi bi-check-circle-fill text-primary me-2"></i>{{ feature }}
+            </li>
+          </ul>
+        </div>
+
+        <!-- Notable Examples -->
+        <div class="futuristic-card p-4 mb-4">
+          <h5 class="fw-bold mb-4">Notable Examples</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2" *ngFor="let example of post.notableExamples">
+              <i class="bi bi-building text-primary me-2"></i>{{ example }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Posts -->
+    <div class="row mt-5" *ngIf="relatedPosts.length > 0">
+      <div class="col-12">
+        <h3 class="fw-bold mb-4">Related Articles</h3>
+        <div class="row g-4">
+          <div class="col-md-4" *ngFor="let relatedPost of relatedPosts">
+            <div class="card futuristic-card h-100" [routerLink]="['/blog', relatedPost.id]">
+              <div class="card-image-wrapper">
+                <img [src]="relatedPost.featuredImage" class="card-img-top" [alt]="relatedPost.title">
+              </div>
+              <div class="card-body">
+                <h6 class="card-title fw-bold">{{ relatedPost.title }}</h6>
+                <p class="card-text text-muted small">{{ relatedPost.excerpt }}</p>
+                <a [routerLink]="['/blog', relatedPost.id]" class="btn btn-sm btn-primary futuristic-btn">
+                  Read More <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Not Found -->
+<div class="container py-5" *ngIf="!post">
+  <div class="row">
+    <div class="col-lg-6 mx-auto text-center">
+      <div class="futuristic-card p-5">
+        <h2 class="fw-bold mb-3">Article Not Found</h2>
+        <p class="text-muted mb-4">The article you're looking for doesn't exist.</p>
+        <a routerLink="/blog" class="btn btn-primary futuristic-btn">Browse All Articles</a>
+      </div>
+    </div>
+  </div>
+</div>

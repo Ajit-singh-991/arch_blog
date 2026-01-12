@@ -1,3 +1,162 @@
 /* You can add global styles to this file, and also import other style files */
 
+/* Bootstrap CSS */
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+/* Tailwind CSS */
 @import "tailwindcss";
+
+:root {
+  /* Futuristic Color Palette */
+  --bg-dark: #050b14;
+  --bg-panel: rgba(255, 255, 255, 0.05);
+  --primary-neon: #00f2fe;
+  --secondary-neon: #764ba2;
+  --accent-pink: #ff0080;
+  --accent-gold: #ffd700;
+  --text-main: #ffffff;
+  --text-muted: #a0a0a0;
+  
+  /* Glassmorphism */
+  --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --backdrop-blur: blur(12px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-dark);
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(118, 75, 162, 0.15) 0%, transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(0, 242, 254, 0.15) 0%, transparent 25%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--secondary-neon), var(--primary-neon));
+  border-radius: 5px;
+}
+
+/* Typography Utilities */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Futuristic Utility Classes */
+/* -------------------------------------------------------------------------- */
+
+/* Glassmorphism Panel */
+.glass {
+  background: var(--bg-panel);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  border: var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 16px;
+}
+
+/* Animated Gradient Text */
+.text-gradient {
+  background: linear-gradient(to right, var(--primary-neon), var(--accent-pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* Neon Glow Animation */
+@keyframes neonPulse {
+  0% { box-shadow: 0 0 5px var(--primary-neon), 0 0 10px var(--primary-neon); }
+  50% { box-shadow: 0 0 20px var(--primary-neon), 0 0 30px var(--primary-neon); }
+  100% { box-shadow: 0 0 5px var(--primary-neon), 0 0 10px var(--primary-neon); }
+}
+
+.neon-glow:hover {
+  animation: neonPulse 1.5s infinite alternate;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Button Styles */
+.btn-futuristic {
+  background: transparent;
+  color: var(--primary-neon);
+  border: 1px solid var(--primary-neon);
+  padding: 10px 24px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.btn-futuristic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 242, 254, 0.4), transparent);
+  transition: left 0.5s;
+}
+
+.btn-futuristic:hover::before {
+  left: 100%;
+}
+
+.btn-futuristic:hover {
+  background: var(--primary-neon);
+  color: var(--bg-dark);
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.6);
+  transform: translateY(-2px);
+}

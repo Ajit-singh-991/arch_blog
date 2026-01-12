@@ -1,0 +1,72 @@
+.futuristic-footer {
+  background: rgba(13, 13, 13, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: #e2e8f0;
+  margin-top: 6rem;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.futuristic-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+      transparent,
+      var(--primary-neon, #00f3ff),
+      var(--secondary-neon, #bc13fe),
+      var(--primary-neon, #00f3ff),
+      transparent);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+.futuristic-footer a {
+  transition: all 0.3s ease;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+}
+
+.futuristic-footer a:hover {
+  color: var(--primary-neon, #00f3ff) !important;
+  text-shadow: 0 0 10px rgba(0, 243, 255, 0.4);
+  transform: translateX(4px);
+}
+
+.futuristic-btn-outline {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.futuristic-btn-outline:hover {
+  background: rgba(0, 243, 255, 0.1);
+  border-color: var(--primary-neon, #00f3ff);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+}
+
+.social-links .btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.5rem;
+}
+
+/* Icons */
+.bi {
+  display: inline-block;
+  font-style: normal;
+  vertical-align: middle;
+}

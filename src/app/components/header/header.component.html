@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top futuristic-navbar">
+  <div class="container-fluid px-4">
+    <a class="navbar-brand d-flex align-items-center" routerLink="/">
+      <svg class="logo-icon me-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="logo-text gradient-text-animated">Architectural World</span>
+    </a>
+    
+    <button 
+      class="navbar-toggler" 
+      type="button" 
+      [attr.aria-expanded]="!isMenuCollapsed"
+      (click)="toggleMenu()"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" [ngbCollapse]="isMenuCollapsed">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="toggleMenu()">
+            <i class="bi bi-house-door me-1"></i>Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/blog" routerLinkActive="active" (click)="toggleMenu()">
+            <i class="bi bi-compass me-1"></i>Explore
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="regionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-globe me-1"></i>Regions
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end futuristic-dropdown" aria-labelledby="regionsDropdown">
+            <li><a class="dropdown-item" routerLink="/blog" [queryParams]="{region: 'Chinese'}" (click)="toggleMenu()">
+              <span class="me-2">🏯</span>Chinese
+            </a></li>
+            <li><a class="dropdown-item" routerLink="/blog" [queryParams]="{region: 'Indian'}" (click)="toggleMenu()">
+              <span class="me-2">🕌</span>Indian
+            </a></li>
+            <li><a class="dropdown-item" routerLink="/blog" [queryParams]="{region: 'European'}" (click)="toggleMenu()">
+              <span class="me-2">🏛️</span>European
+            </a></li>
+            <li><a class="dropdown-item" routerLink="/blog" [queryParams]="{region: 'Japanese'}" (click)="toggleMenu()">
+              <span class="me-2">⛩️</span>Japanese
+            </a></li>
+            <li><a class="dropdown-item" routerLink="/blog" [queryParams]="{region: 'Islamic'}" (click)="toggleMenu()">
+              <span class="me-2">🕌</span>Islamic
+            </a></li>
+            <li><a class="dropdown-item" routerLink="/blog" [queryParams]="{region: 'African'}" (click)="toggleMenu()">
+              <span class="me-2">🏜️</span>African
+            </a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item future-link" routerLink="/blog" [queryParams]="{region: 'Future'}" (click)="toggleMenu()">
+              <span class="me-2">🚀</span>Future Architecture
+            </a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

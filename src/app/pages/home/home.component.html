@@ -1,0 +1,119 @@
+<div class="home-container">
+  <!-- Hero Section with Carousel -->
+  <section class="hero-carousel-section">
+    <div class="futuristic-carousel">
+      <ngb-carousel>
+        <ng-template ngbSlide>
+          <div class="hero-slide">
+            <img src="https://images.unsplash.com/photo-1548625361-987612d9210d?q=80&w=2000&auto=format&fit=crop"
+              alt="Chinese Architecture" class="hero-slide-image">
+            <div class="hero-slide-overlay"></div>
+            <div class="container hero-content text-center">
+              <span class="hero-badge neon-glow">Featured Architecture</span>
+              <h1 class="hero-title display-2 fw-bold mb-4 text-gradient">The Timeless Elegance of<br>Chinese
+                Architecture</h1>
+              <p class="hero-subtitle lead mb-5">Discover the harmony between nature and structure, where every beam
+                tells a story of ancient wisdom.</p>
+              <div class="d-flex gap-3 justify-content-center">
+                <a routerLink="/blog" class="btn-futuristic">Explore Collection</a>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="hero-slide">
+            <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=2000&auto=format&fit=crop"
+              alt="Indian Architecture" class="hero-slide-image">
+            <div class="hero-slide-overlay"></div>
+            <div class="container hero-content text-center">
+              <span class="hero-badge neon-glow">Sacred Spaces</span>
+              <h1 class="hero-title display-2 fw-bold mb-4 text-gradient">The Majestic Splendor of<br>Indian Temples
+              </h1>
+              <p class="hero-subtitle lead mb-5">Journey through centuries of intricate stone carvings and spiritual
+                symbolism.</p>
+              <div class="d-flex gap-3 justify-content-center">
+                <a routerLink="/blog" class="btn-futuristic">Start Journey</a>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="hero-slide">
+            <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=2000&auto=format&fit=crop"
+              alt="Future Architecture" class="hero-slide-image">
+            <div class="hero-slide-overlay"></div>
+            <div class="container hero-content text-center">
+              <span class="hero-badge neon-glow">Innovation</span>
+              <h1 class="hero-title display-2 fw-bold mb-4 text-gradient">Designing the<br>Cities of Tomorrow</h1>
+              <p class="hero-subtitle lead mb-5">Where sustainability meets cutting-edge technology in the architecture
+                of the future.</p>
+              <div class="d-flex gap-3 justify-content-center">
+                <a routerLink="/blog" class="btn-futuristic">View Future</a>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section container">
+    <div class="row g-4 text-center">
+      <div class="col-md-4">
+        <div class="glass stat-card h-100 float">
+          <div class="stat-number text-gradient">100+</div>
+          <p class="stat-label">Architectural Marvels</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="glass stat-card h-100 float" style="animation-delay: 1s;">
+          <div class="stat-number text-gradient">7</div>
+          <p class="stat-label">Distinct Styles</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="glass stat-card h-100 float" style="animation-delay: 2s;">
+          <div class="stat-number text-gradient">1000s</div>
+          <p class="stat-label">Years of History</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regions Grid -->
+  <section class="regions-section container">
+    <div class="text-center mb-5">
+      <h2 class="display-4 fw-bold mb-3 text-white">Explore by Region</h2>
+      <p class="lead text-muted">Dive into the unique architectural heritage of each civilization</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" *ngFor="let region of regions">
+        <a [routerLink]="['/blog']" [queryParams]="{ region: region.name }" class="region-card-link">
+          <div class="region-card glass h-100 overflow-hidden position-relative">
+            <div class="region-bg-image" [style.backgroundImage]="'url(' + region.image + ')'"></div>
+            <div class="region-overlay"></div>
+            <div
+              class="region-content p-4 position-relative z-1 d-flex flex-column align-items-center text-center h-100 justify-content-center">
+              <div class="region-icon-wrapper mb-3 p-3 rounded-circle glass neon-glow" [innerHTML]="region.safeSvg">
+              </div>
+              <h3 class="h4 mb-2 text-white">{{ region.name }}</h3>
+              <p class="text-light opacity-75 small mb-0">{{ region.description }}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta-section mt-5">
+    <div class="container text-center cta-content">
+      <h2 class="display-4 fw-bold mb-4 text-white">Ready to Explore?</h2>
+      <p class="lead mb-5 text-white opacity-75">Join thousands of architecture enthusiasts on a journey through time
+        and space.</p>
+      <a routerLink="/blog" class="btn-futuristic btn-lg px-5">Start Exploring Now</a>
+    </div>
+  </section>
+</div>

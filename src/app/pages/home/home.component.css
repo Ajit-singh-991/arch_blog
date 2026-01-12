@@ -1,0 +1,241 @@
+.home-container {
+  min-height: 100vh;
+  padding-top: 0;
+}
+
+/* Hero Carousel */
+.hero-carousel-section {
+  position: relative;
+  height: 85vh;
+  /* Taller hero */
+}
+
+.futuristic-carousel {
+  border-bottom: 2px solid rgba(0, 242, 254, 0.2);
+}
+
+.hero-slide {
+  position: relative;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-slide-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  filter: brightness(0.6) contrast(1.1);
+  /* Cinematic look */
+}
+
+.hero-slide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, transparent 0%, rgba(5, 11, 20, 0.8) 100%);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title {
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Stats Section */
+.stats-section {
+  margin-top: -3rem;
+  /* Overlap effect */
+  position: relative;
+  z-index: 10;
+}
+
+.stat-card {
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary-neon);
+  box-shadow: 0 0 30px rgba(0, 242, 254, 0.2);
+}
+
+.stat-number {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Regions Section */
+.regions-section {
+  padding: 8rem 0;
+}
+
+.region-card-link {
+  display: block;
+  height: 320px;
+}
+
+.region-card {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.region-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+  z-index: 0;
+}
+
+.region-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 11, 20, 0.7);
+  /* Dark overlay */
+  transition: background 0.5s ease;
+  z-index: 1;
+}
+
+.region-content {
+  opacity: 0.9;
+  transition: all 0.5s ease;
+}
+
+/* Hover Effects */
+.region-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary-neon);
+  box-shadow: 0 10px 40px rgba(0, 242, 254, 0.15);
+}
+
+.region-card:hover .region-bg-image {
+  transform: scale(1.1);
+}
+
+.region-card:hover .region-overlay {
+  background: rgba(5, 11, 20, 0.4);
+  /* Reveal image on hover */
+}
+
+.region-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.region-card:hover .region-icon-wrapper {
+  transform: scale(1.1) rotate(5deg);
+  background: var(--primary-neon);
+  color: #000;
+  /* Contrast for icon when background is neon */
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, rgba(118, 75, 162, 0.2) 0%, rgba(0, 242, 254, 0.2) 100%);
+  padding: 8rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary-neon), transparent);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .stats-section {
+    margin-top: 2rem;
+  }
+
+  .stat-card {
+    padding: 1.5rem;
+  }
+
+  .region-card-link {
+    height: 280px;
+  }
+}
